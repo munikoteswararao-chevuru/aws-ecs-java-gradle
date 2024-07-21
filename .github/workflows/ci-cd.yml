@@ -23,7 +23,9 @@ jobs:
 
       # Build and Test with Gradle
       - name: Build and Test with Gradle
-        run: ./gradlew clean build
+        run: |
+          chmod a+x ./gradlew
+          ./gradlew clean build
 
       - name: Build and tag Docker image
         run: |
