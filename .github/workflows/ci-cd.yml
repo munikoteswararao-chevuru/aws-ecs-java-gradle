@@ -26,7 +26,6 @@ jobs:
         run: gradle clean build
       - name: Build and tag Docker image
         run: |
-          cd /build/libs
           ls -la
           docker build -t my-image-name:${{ github.sha }} .
           docker tag my-image-name:${{ github.sha }} my-image-name:latest
