@@ -25,6 +25,11 @@ jobs:
       # Build and Test with Gradle
       - name: Build and Test with Gradle
         run: gradle build -x test
+        
+      - name: Build and tag Docker image
+        run: |
+          docker build -t my-image-name:${{ github.sha }} .
+          docker tag my-image-name:${{ github.sha }} my-image-name:latest
 
       # # Configure AWS credentials
       # - name: Configure AWS credentials
