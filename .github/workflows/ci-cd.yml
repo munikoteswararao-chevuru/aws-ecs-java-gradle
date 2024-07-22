@@ -32,6 +32,7 @@ jobs:
           ls -lR
           docker build -t my-image-name:${{ github.sha }} .
           docker tag my-image-name:${{ github.sha }} my-image-name:latest
+          docker images ls
 
 
       # # Configure AWS credentials
